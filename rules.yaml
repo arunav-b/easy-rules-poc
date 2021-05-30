@@ -1,0 +1,31 @@
+ActiveBanks:
+  Condition: 
+    - For a provided instrument and related bank object, check if the bankStatus is active
+  Action:
+    - Set verified flag as TRUE
+
+ActiveEnrollment:
+  Condition:
+    - For a provided instrument and its enrollments with input cardAccounts, if atleast one of the enrollment needs to be in ACTIVE state
+  Action:
+    - Set verified flag as TRUE
+
+UniqueEnrollment:
+  Condition:
+    - For a provided instrument, its enrollments with input cardAccounts and all its enrollments, if there are no active enrollments with cardAccounts other than input cardAccounts set
+  Action:
+    - Set verified flag as TRUE
+
+MinNumberOfPaymentsInATimeRange:
+  Condition:
+    - For a provided instrument and all payments done by the input cardAccounts using this instrument, has done the min number of payments in the time range
+  Action:
+    - Set verified flag as TRUE
+
+MaxAllowedReturnsInATimeRange:
+  Condition:
+    - For a provided instrument and all payments done by the input cardAccounts using this instrument, has returns less than equal to the max allowed in the time range
+  Action:
+    - Set verified flag as TRUE
+
+

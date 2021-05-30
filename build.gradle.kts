@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.codegen.coroutines.ChangeBoxingMethodTransformer.transform
+
 plugins {
     kotlin("jvm") version "1.4.32"
     kotlin("plugin.allopen") version "1.4.32"
@@ -17,10 +19,10 @@ dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-rest-client")
     implementation("io.quarkus:quarkus-kotlin")
-    implementation("io.quarkus:quarkus-resteasy-jackson")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-resteasy")
+    implementation("org.jeasy:easy-rules-core:4.1.0")
+
     testImplementation("io.quarkus:quarkus-junit5")
 }
 
